@@ -1,0 +1,109 @@
+Linux terminal (GitBash) commands
+
+1) Посмотреть где я
+$ pwd
+/d
+
+2) Создать папку
+$ mkdir Study
+
+3) Зайти в папку
+$ cd Study
+
+4) Создать 3 папки
+$ mkdir dir1 dir2 dir3
+
+5) Зайти в любоую папку
+$ cd dir1
+
+6) Создать 5 файлов (3 txt, 2 json)
+$ touch file1.txt file2.txt file3.txt file4.json file5.json
+
+7) Создать 3 папки
+$ mkdir dir11 dir22 dir33
+
+8) Вывести список содержимого папки
+$ ls -l
+total 0
+drwxr-xr-x 1 ekaru 197609 0 Feb  3 21:36 dir11/
+drwxr-xr-x 1 ekaru 197609 0 Feb  3 21:36 dir22/
+drwxr-xr-x 1 ekaru 197609 0 Feb  3 21:36 dir33/
+-rw-r--r-- 1 ekaru 197609 0 Feb  3 21:35 file1.txt
+-rw-r--r-- 1 ekaru 197609 0 Feb  3 21:35 file2.txt
+-rw-r--r-- 1 ekaru 197609 0 Feb  3 21:35 file3.txt
+-rw-r--r-- 1 ekaru 197609 0 Feb  3 21:36 file4.json
+-rw-r--r-- 1 ekaru 197609 0 Feb  3 21:36 file5.json
+
+9) + Открыть любой txt файл
+10) + написать туда что-нибудь, любой текст.
+11) + сохранить и выйти.
+$ vim file2.txt
+
+12) Выйти из папки на уровень выше
+$ cd ..
+
+13) переместить любые 2 файла, которые вы создали, в любую другую папку.
+$ mv file1.txt dir11/file1.txt
+
+ekaru@Karunnaya MINGW64 /d/Study/dir1
+$ mv file2.txt dir11/file2.txt
+
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку.
+$ cp file3.txt dir11/file3.txt
+
+ekaru@Karunnaya MINGW64 /d/Study/dir1
+$ cp file4.json dir11/file4.json
+
+15) Найти файл по имени
+$ find -depth -name file1.txt
+./dir11/file1.txt
+
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает.
+$ tail -f file1.txt
+
+17) вывести несколько первых строк из текстового файла
+$ head -2 f3.txt
+sdflshkgk;sjdhg
+sdfkjhsdfkjsdh
+
+18) вывести несколько последних строк из текстового файла
+$ tail -2 f3.txt
+
+sdfl;skfsdlksdfnk
+
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает.
+$ less file1.txt
+
+20) вывести дату и время
+$ date
+Fri Feb  3 22:26:29 RTZ 2023
+
+
+*1) Отправить http запрос на сервер http://162.55.220.72:5005/terminal-hw-request
+$ curl http://162.55.220.72:5005/terminal-hw-request
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   232  100   232    0     0   2592      0 --:--:-- --:--:-- --:--:--  2606<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>404 Not Found</title>
+<h1>Not Found</h1>
+<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>
+
+
+
+*2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+#!/bin/bash
+
+mkdir dir1
+cd dir1
+mkdir dir11 dir22 dir33
+cd dir11
+touch f1.txt f2.txt f3.txt f4.json f5.json
+mkdir dir44 dir55 dir66
+ls -l
+mv f1.txt dir44/f1.txt
+mv f2.txt dir44/f2.txt
+
+
+
+
+
